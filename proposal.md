@@ -41,7 +41,7 @@ The game will run in the window of an internet browser. The user will play the g
 The game involves 2 players. However, to make it more enjoyable for the user, they will be playing against an AI instead of another user. The user will henceforth be referred to as 'the user,' and the AI will henceforth be reffered to as 'the opponent.'
 
 ## Game Rules
-INTRO TEXT TK
+The goal of the game is to match as many tiles as you can. You can try to match your tile with more than one other tile on the board. You can also use some game theory and particularly put your tiles in places that don't benefit you hopefully hurt your opponent.
 
 ### Setup
 The board begins empty, and each player is dealt 4 tiles. Players can only see their own tiles.
@@ -86,8 +86,49 @@ The goal is to 'capture' as many cells on the board as possible. To do that, you
 The player who captures the most cells on the board wins the game. This can happen in one of two main ways, with some caveats about possible ties. In the first scenario, the entire board will be filled with tiles, and the player with the most captured cells wins. (In this scenario, the game lasts 32 rounds.) In the second scenario, the player who captures more than 32 cells first wins. (In this scenario, the game can terminate prior to 32 rounds.) These numbers obviously adjust accordingly for games played on the small board. (Note: It's possible for some cells to have standard tiles and remain 'uncaptured' after completely filling the board. These are called orphans, and they will be discussed in 'Rare Scenarios' below.)
 
 ### Potential Conflicts
+Since each player plays their tiles simultaneously, it is possible for both players to attempt to play different tiles on the same cell in a given round. In that case, the cell goes to the player whose 'side' it 'belongs' to. The horizontal midline that separates the fourth and fifth rows divides the board into these two 'sides.' The cells from the first through fourth rows all initally 'belong' to the user; while the cells from the fifth through the eight rows all initially 'belong' to the opponent. After determining which player gets the cell, the other player must still play the tile they intially chose in a different cell on the board. (Note: Whoever wins that initial cell will automatically win any adjoining cells that the player is attempting to match; the other player cannot try to contest them in a possible match pair hierarchy.) As a result, if both players attempt to place a tile on the cell at the fourth row of the fifth column, the cell would go to the user, since it falls on their side.
+
+Additionally, since the goal of the game is to 'match' ones tiles with the tiles already on the board, it's possible that both players may try to match the same tile (or tiles) simultaneously. In this scenario, the match is said to be in 'conflict,' and the player with the stronger match with the tile (or tiles) will win them. If both players have the same level of match with the given tile, then no player gets it, and all tiles involved remain uncaptured and as standard tiles (not individual player tiles). See 'Hierarchy of Match Pairs' below for explanations on how to handle trickier match conflicts, and observe how uncaptured cells from match pairs may become permanent orphans in 'Rare Scenarios.'
+
+In this scenario, both players are attempting to match with the yellow triangle. The user played the green triangle, while the opponent played the yellow circle:
+![Simple Match Conflict Before Resolution on the Large Board](/images/simple-match-conflict-before-resolution-large-board.png)
+
+The user wins the contest since their tile shares two features with the contested tile: The user's tile is both a triangle and a 2, as is the contested tile. In contrast, the opponent's tile only shares one feature with the contested tile: They are both yellow. As a result, the user's individual tiles (i.e., the eagle tiles) replace both the tile they played and the tile contested:
+![Simple Match Conflict After Resolution on the Large Board](/images/simple-match-conflict-after-resolution-large-board.png)
+
+*Same example on the small board:*
+![Simple Match Conflict Before Resolution on the Small Board](/images/simple-match-conflict-before-resolution-small-board.png)
+
+![Simple Match Conflict After Resolution on the Small Board](/images/simple-match-conflict-after-resolution-small-board.png)
+
+As mentioned before, the players may attempt to match their tile with more than one tile on the board in a given round. This leads to more complex match pairs, which leads to more complex match conflicts.
+
+In this scenario, both players are attempting to match with the red square and the blue circle. The user plays the yellow circle with a 3, while the opponent plays the blue circle with a 3. The user's tile matches its 3 with the red square and its circle with blue circle; while, the opponent's tile matches its 3 with the red square and both its shape and color with the blue circle with a 1:
+![Complex Conflict Before Markers on the Large Board](/images/complex-conflict-before-markers-large-board.png)
+
+The opponent wins the conflict because it matches 2 criteria with 1 of the contested tiles and 1 criteria with the other tile, for a total of 3 matches. In contrast, the user only had 1 match with each of the contested tiles, for a total of only 2 matches. As a result, the opponent's tiles (i.e., a snake) replace the key tiles:
+![Complex Conflict After Markers on the Large Board](/images/complex-conflict-after-markers-large-board.png)
+
+*Same example on the small board:*
+![Complex Conflict Before Markers on the Small Board](/images/complex-conflict-before-markers-small-board.png)
+
+![Complex Conflict After Markers on the Small Board](/images/complex-conflict-after-markers-small-board.png)
+
 ### Rare Scenarios
+In the above scenarios, we discussed match pairs that would result with no captures. Some of those may find themselves no only not paired in that round but rather in the unenviable position of never being paired in the future. In short, they become permament orphans, since depending on their position, no one may be able to ever reach them again.
+
+In the below example, the yellow circle attempts to match the yellow triangle, while the blue circle tries to match the yellow tringle since they both have same number. However, since they both only have 1 connection, neither of them can win, and all tiles remain unconquered. Unfortunately, the yellow trianle is now boxed in on all sides. Since it wasn't possible to match in the previous step, then it will never be able to pair with any tile. It is a permanent orphan.
+
+![Match Conflict with No Solution on the  Small Board](/images/match-conflict-no-solution-small-board.png)
+
 ### Hierarchy of Match Pairs
+With complicated match pairs, a numerical method is need to clarify the score in any given match pair conflict. In general, the less pieces involved and the less commonalties they share, the lower their score. However, here's a more explicit breakdown of how to assign points to hypothetical match pairs to determine the winner (or ties):
+
+In this rare instance, a player manages to capture five cells at once:
+![Super Capture Before Markers on the Small Board](/images/super-capture-before-markers-small-board.png)
+
+In the previous step, only the red square, blue cirlce, and yellow and green triangles were on the board, all merely connected by their corners. The user plays a blue triangle in the center of all of them. It matches the 3 of the red square, the blue of the circle above it, and the triangle shape of the two other figures. While the opponent played the red circle, and it has a strong match with the two cells it touches (it shares shape and number with the blue circle, and it shares color with the red square), the other pair is stronger. As a result, the user wins, and the user's eagle tiles now appear on all five cells:
+![Super Capture After Markers on the Small Board](/images/super-capture-after-markers-small-board.png)
 
 ## Game Play
 ### Landing Page
