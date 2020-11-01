@@ -124,6 +124,31 @@ In the below example, the yellow circle attempts to match the yellow triangle, w
 ### Hierarchy of Match Pairs
 With complicated match pairs, a numerical method is need to clarify the score in any given match pair conflict. In general, the less pieces involved and the less commonalties they share, the lower their score. However, here's a more explicit breakdown of how to assign points to hypothetical match pairs to determine the winner (or ties):
 
+| Points | Blocks   | Combinations              | Examples                                                                                      |
+|  :---: |  :---:   |        :---:              |                                            :---:                                              |
+| 1      | 1        | 1 match                   | both red or both triangles                                                                    |
+| 2      | 1        | 2 matches                 | both red and triangle                                                                         |
+| 3      | 2        | 2 sets on 1 match         | red triangle matches red square and blue triangle                                             |
+| 4      | 2        | 1 match across all 3      | all 3 are red                                                                                 |
+| 5      | 2        | 2 sets of 2 matches       | red 1 triangle matches red 2 triangle and red 1 square                                        |
+| 6      | 2        | 2 matches across all 3    | all 3 are red triangles                                                                       |
+| 7      | 3        | 3 sets of 1 match         | red 2 triangle matches a red and a 2 and a triangle                                           |
+| 8      | 3        | 2 sets of 1 match         | red 2 triangle matches 2 reds and 1 triangle                                                  |
+| 9      | 3        | 1 match across all 3      | all 4 are red                                                                                 |
+| 10     | 3        | 3 sets of 2 matches       | red 2 triangle matches red 3 triangle, red 2 square, and blue 2 triangle                      |
+| 11     | 3        | 2 sets of 2 matches       | red 2 triangle matches red 2 square, red 2 circle, and blue 2 triangle                        |
+| 12     | 3        | 2 matches across all 3    | all 4 are red triangles                                                                       |
+| 13     | 4        | 4 sets of 1 match         | red 2 triangle matches 2 reds, a 2, and a triangle                                            |
+| 14     | 4        | 3 sets of 1 match         | red 2 triangle matches a red, a 2, and a triangle                                             |
+| 15     | 4        | 2 sets of 1 match         | red 2 triangle matches 2 reds and 2 triangles                                                 |
+| 16     | 4        | 1 match across all 4      | all 5 are red                                                                                 |
+| 17     | 4        | 4 sets of 2 matches       | red 2 triangle matches red 1 triangle, red 3 triangle, red 2 square, and red 2 circle         |
+| 18     | 4        | 3 sets of 2 matches       | red 2 triangle matches red 3 triangle, red 4 triangle, blue 2 triangle, and green 2 triangle  |
+| 19     | 4        | 2 sets of 2 matches       | red 2 triangle matches red 3 triangle, red 4 triangle, green 2 triangle, and blue 2 triangle  |
+| 20     | 4        | 2 matches across all 4    | all 5 are red triangles                                                                       |
+
+(Note: The points above are only used to determine how to break match conflicts. They have no bearing on who wins the game, unless it ends with a tie, in which the player with the most accumulated points wins.)
+
 In this rare instance, a player manages to capture five cells at once:
 ![Super Capture Before Markers on the Small Board](/images/super-capture-before-markers-small-board.png)
 
