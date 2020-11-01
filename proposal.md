@@ -215,15 +215,43 @@ In contrast, a smarter AI could be built to both know what tiles it has, what ti
 To begin, I think it makes sense to build out the dumb AI on the small board. Then, after conquering it, I can build it out to a more advanced level with the large board and a more sophisticated AI.
 
 ## Coding Concepts
+INTRO TEXT TK
+
 ### HTML
+```html
+```
+
 ### CSS
+```css
+```
+
 ### JavaScript
+```javascript
+```
+
 #### Arrays
+```javascript
+```
+
 #### Objects
+```javascript
+```
+
 #### Logic
+```javascript
+```
+
 #### Functions
+```javascript
+```
+
 #### Event Listeners
+```javascript
+```
+
 #### Promises
+```javascript
+```
 
 ## Plan
 This is merely an initial plan; it will likely change multiple times. However, it provides some reasonable goals, especially for the middle and end of the week.
