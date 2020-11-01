@@ -1,8 +1,8 @@
-// NOT FINALIZED //
-
 # Matches and Patches
 
-INTRO TEXT TK
+I elaboared off my initial pitch: A game with 64 cards, where each player was dealt 4 cards, and in each round, they would choose one of their cards to play against their opponents. However, I realized that hierarchicalizing the cards based on how I was visualizing them would be difficult, so I pivoted to a game focused on matching previously played cards instead of beating them. To organize the played cards, I decided to use a board. As a result, it shifted from a card game to a tile game. It involves the same premise as the intial pitch (64 tiles, with each player dealt 4 initially), but winning the game has to do with the entire board, and it will be determined after all tiles are played, not on a round-by-round basis.
+
+I call it Matches and Patches. The goal is to 'match' your tiles with existing tiles already on the board, and thus capture different 'patches' (aka, cells) on the board. In essence, it's Uno crossed with dominoes.
 
 ## Game Elements
 The game will involve 1 board, 2 players, 64 standard tiles, 128 player tiles, and an interface that will run the game on an internet browser.
@@ -232,39 +232,78 @@ To begin, I think it makes sense to build out the dumb AI on the small board. Th
 This game will implement various coding concepts. For example, the pages will be stored as HTML, the style will be rendered with CSS, and the user will be able to interact with it as a result of JavaScript.
 
 ### HTML
+The pages will be built out of HTML. While it may be possible to host all of them on a single index.html page, I currently plan to use multiple HTML pages for different scenarios.
+
+The landing page, in addition to linking with everything else, will involve code like this:
 ```html
+<h1>Matches and Patches</h1>
+<p>Here's some info about the game. Want to play?</p>
+<button>Play</button>
+```
+
+The game page will involve div's for creating the grid that will host the board:
+```html
+<div id="game">
+    <div id="cell1"></div>
+    <div id="cell2"></div>
+    <div id="cell3"></div>
+    <div id="cell4"></div>
+</div>
 ```
 
 ### CSS
+There will be different CSS style sheets for handling different pieces of the project. Currently, I anticipate needing 3 style sheets: the landing page, the game board, and the cards.
+
+Styling for the introductory landing page will look like this:
 ```css
+h1 {
+    font-size: 40px;
+    color: blue;
+}
+```
+
+Styling for the game board will look like this:
+```css
+#game {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1 fr);
+}
+```
+
+Styling for the cards will look like this:
+```css
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
 ```
 
 ### JavaScript
+The game's logic will be handled with JavaScript. This will be the bulk of the code. Different aspects of the game will be handled in different script files. I anticipate needing 3 files: the landing page, the game board, and the rules of the game (i.e., acceptable moves). Various specific JavaScript elements will be utilized throughout the game, including arrays (e.g., the cards), objects, logic (e.g., whether a specific move is allowed), functions, event listeners (e.g., what to do when the user clicks on a cell), and promises (e.g., waiting for the AI to evaluate its move before letting the user move).
+
+The landing page script would include code like this:
 ```javascript
+const button = document.querySelector('button');
+button.addEventListener('click', startGame);
 ```
 
-#### Arrays
+The game board will include code like this:
 ```javascript
+const cell1 = document.querySelector('#cell1');
+cell1.addEventListener('click', checkMove);
 ```
 
-#### Objects
+The rules file will include code like this:
 ```javascript
-```
-
-#### Logic
-```javascript
-```
-
-#### Functions
-```javascript
-```
-
-#### Event Listeners
-```javascript
-```
-
-#### Promises
-```javascript
+if (cell2 === '') {
+    return cell2;
+} else {
+    return false;
+}
 ```
 
 ## Plan
@@ -273,15 +312,15 @@ This is merely an initial plan; it will likely change multiple times. However, i
 ### Timeline
 Nov. 1: Adjust plan based on feedback from instructor
 
-Nov. 2: Create repo, file structure, and basic content (e.g., board, cards, landing page); finalize game plan
+Nov. 2: Create repo, file structure, and basic content (e.g., board, cards, landing page); finalize game plan; at this stage, the user should be able to view the board, their cards, and change the board and their cards by clicking on certain combinations; use the information from the proposal to create the initial readme
 
-Nov. 3: Set game flow logic in JavaScript
+Nov. 3: Set game flow logic in JavaScript; at this stage, the user should be able to execute various rounds of the game, with the AI responding at a very basic level
 
 Nov. 4: Work on advanced logic aspects as well as integration and initial troubleshooting; at this stage, the game should be playable but not styled and with a few errors
 
 Nov. 5: Build in the materials and user experience; this stage will constitute the first pass at seriously styling the game
 
-Nov. 6: Tackle advanced styling, set up the live site, and fill out the readme file
+Nov. 6: Tackle advanced styling, set up the live site, and fill out the readme file to reflect what I did over the previous week
 
 Nov. 7: Play game extensively and get friends and family to also try it out
 
