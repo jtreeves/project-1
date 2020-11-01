@@ -26,8 +26,19 @@ In addition to the standard tiles, there are 128 non-distinct player tiles. Each
 ![Snake Token](/images/snake-token.png)
 
 ### Board
+The board for the full game will be an 8-by-8 board, comprising 64 cells, analogous to a chess board. During production, there will also be a smaller, 4-by-4 board, comprising 16 cells. Upon completion, the user may have the option to play using either the large board or the small board. (Note: In both scenarios, the game will use all 64 tiles described above.)
+
+*Large board:*
+![Large Board](/images/large-empty-board.png)
+
+*Small board:*
+![Small Board](/images/small-empty-board.png)
+
 ### Interface
+The game will run in the window of an internet browser. The user will play the game by clicking on different parts of the screen. For instance, for each move, they would click on the tile they want to play as well as the cell on the board on which they want to play that tile, then click a submit button to finalize their move. (See below, in the 'Game Play' section, for wireframes of the interface.)
+
 ### Players
+The game involves 2 players. However, to make it more enjoyable for the user, they will be playing against an AI instead of another user. The user will henceforth be referred to as 'the player,' and the AI will henceforth be reffered to as 'the opponent.'
 
 ## Game Rules
 ### Setup
