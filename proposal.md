@@ -198,7 +198,7 @@ And like this after the match has been resolved:
 
 ### End of Game
 As the game progresses, the board will get more crowded, thus providing less open cells for players to attempt to capture. In the below example, neither player can match with the one cell available for a match ()
-![Late Game Desperation](/images/late-game-desparate-small-board.png)
+![Late Game Desperation](/images/late-game-desperate-small-board.png)
 
 As the game 
 ![Near End Game Before Markers](/images/near-end-game-before-markers-small-board.png)
