@@ -164,7 +164,7 @@ In the previous step, only the red square, blue cirlce, and yellow and green tri
 ![Super Capture After Markers on the Small Board](/images/super-capture-after-markers-small-board.png)
 
 ## Game Play
-INTRO TEXT TK
+From opening the game app in the browser to winning the game and choosing to play again, this is what the user will see in the interface each step along the way.
 
 ### Landing Page
 Upon opening the game, the user will see a landing page announcing the game, providing a basic description of it, and options to either start playing the game or watch a slideshow further explaining the game:
@@ -197,18 +197,22 @@ And like this after the match has been resolved:
 ![Middle Game After Markers](/images/middle-game-after-markers-small-board.png)
 
 ### End of Game
-As the game progresses, the board will get more crowded, thus providing less open cells for players to attempt to capture. In the below example, neither player can match with the one cell available for a match ()
+As the game progresses, the board will get more crowded, thus providing less open cells for players to attempt to capture. In the below example, neither player can match with the one cell available for a match (the blue circle). So instead, they each put a tile on their side of the board, as isolated from that open tile as possible. (The opponent plays the green square, and the user plays the red square.)
 ![Late Game Desperation](/images/late-game-desperate-small-board.png)
 
-As the game 
+In the next move, the user plays the green circle next to the blue circle, and the opponent plays the yellow triangle in the corner. As a result of this move, the user will capture blue circle, and both the cell with the blue circle and the cell with the green circle will receive the user's personal tile in the next phase. 
 ![Near End Game Before Markers](/images/near-end-game-before-markers-small-board.png)
 
+Here, the blue cirlce and the green circle have been replaced by the user's personal tile (the eagle):
 ![Near End Game After Markers](/images/near-end-game-after-markers-small-board.png)
 
+In the final move, the user plays the blue square, and the opponent plays the red circle:
 ![End Game Before Markers](/images/end-game-before-markers-small-board.png)
 
+Since the blue square matches with both the yellow triangle (since they share the number 1) and the green square, the user will capture all 3 of those cells. The opponent, on the other hand, will match with the red square and capture its cell as well as its own.
 ![End Game After Markers](/images/end-game-after-markers-small-board.png)
 
+As a result, the user wins the game. All of the cells are occupied, which means the game has ended, and the user has 8 cells, while the opponent only has 7 cells, so the user wins. (Note: The yellow triangle in the corner was never captured during the game because it was orphaned in a previous match conflict.) After winning, the interface will tell the user that they won and provide a button to play again:
 ![End Game Message for the Small Board](/images/end-message-small-board.png)
 
 ## Full Version vs. Partial Version
@@ -225,7 +229,7 @@ In contrast, a smarter AI could be built to both know what tiles it has, what ti
 To begin, I think it makes sense to build out the dumb AI on the small board. Then, after conquering it, I can build it out to a more advanced level with the large board and a more sophisticated AI.
 
 ## Coding Concepts
-INTRO TEXT TK
+This game will implement various coding concepts. For example, the pages will be stored as HTML, the style will be rendered with CSS, and the user will be able to interact with it as a result of JavaScript.
 
 ### HTML
 ```html
