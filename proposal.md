@@ -41,7 +41,7 @@ The game will run in the window of an internet browser. The user will play the g
 The game involves 2 players. However, to make it more enjoyable for the user, they will be playing against an AI instead of another user. The user will henceforth be referred to as 'the user,' and the AI will henceforth be reffered to as 'the opponent.'
 
 ## Game Rules
-The goal of the game is to match as many tiles as you can. You can try to match your tile with more than one other tile on the board. You can also use some game theory and particularly put your tiles in places that don't benefit you hopefully hurt your opponent.
+The goal of the game is to match as many tiles as you can. You can try to match your tile with more than one other tile on the board. You can also use some game theory and put your tiles in places that don't benefit you but hopefully hurt your opponent.
 
 ### Setup
 The board begins empty, and each player is dealt 4 tiles. Players can only see their own tiles.
@@ -81,6 +81,11 @@ The goal is to 'capture' as many cells on the board as possible. To do that, you
 
 *How the board will look after the cells are filled with the player's individual tiles on the small board:*
 ![Second Move with One Match After Tokens on Small Board](images/second-move-one-match-after-tokens-small-board.png)
+
+*Another possible scenario for the small board:*
+![Double Match and Single Match Before Tokens](/images/double-match-single-match-before-tokens-small-board.png)
+
+![Double Match and Single Match After Tokens](/images/double-match-single-match-after-tokens-small-board.png)
 
 ### Winning
 The player who captures the most cells on the board wins the game. This can happen in one of two main ways, with some caveats about possible ties. In the first scenario, the entire board will be filled with tiles, and the player with the most captured cells wins. (In this scenario, the game lasts 32 rounds.) In the second scenario, the player who captures more than 32 cells first wins. (In this scenario, the game can terminate prior to 32 rounds.) These numbers obviously adjust accordingly for games played on the small board. (Note: It's possible for some cells to have standard tiles and remain 'uncaptured' after completely filling the board. These are called orphans, and they will be discussed in 'Rare Scenarios' below.)
@@ -125,9 +130,9 @@ In the below example, the yellow circle attempts to match the yellow triangle, w
 With complicated match pairs, a numerical method is need to clarify the score in any given match pair conflict. In general, the less pieces involved and the less commonalties they share, the lower their score. However, here's a more explicit breakdown of how to assign points to hypothetical match pairs to determine the winner (or ties):
 
 | Points | Blocks   | Combinations              |
-|  :---: |  :---:   |            :---:          |                                     
+|  :---: |  :---:   |            :---:          |
 | 1      | 1        | 1 match                   |
-| 2      | 1        | 2 matches                 |                                       
+| 2      | 1        | 2 matches                 |
 | 3      | 2        | 2 sets on 1 match         |
 | 4      | 2        | 1 match across all 3      |
 | 5      | 2        | 2 sets of 2 matches       |
@@ -145,9 +150,12 @@ With complicated match pairs, a numerical method is need to clarify the score in
 | 17     | 4        | 4 sets of 2 matches       |
 | 18     | 4        | 3 sets of 2 matches       |
 | 19     | 4        | 2 sets of 2 matches       |
-| 20     | 4        | 2 matches across all 4    |                   |
+| 20     | 4        | 2 matches across all 4    |
 
 (Note: The points above are only used to determine how to break match conflicts. They have no bearing on who wins the game, unless it ends with a tie, in which the player with the most accumulated points wins.)
+
+While this layout is unlikely to occur during a game, it's certainly possible. After you see what happens in the next move, you'll understand why it should be avoided:
+![Possible Second Move for the Small Board](/images/possible-second-move-small-board.png)
 
 In this rare instance, a player manages to capture five cells at once:
 ![Super Capture Before Markers on the Small Board](/images/super-capture-before-markers-small-board.png)
@@ -156,11 +164,42 @@ In the previous step, only the red square, blue cirlce, and yellow and green tri
 ![Super Capture After Markers on the Small Board](/images/super-capture-after-markers-small-board.png)
 
 ## Game Play
+INTRO TEXT TK
+
 ### Landing Page
+![Landing Page](/images/landing-page.png)
+
 ### Slideshow
+![Slideshow Example 1](/images/slideshow1.png)
+
+![Slideshow Example 2](/images/slideshow2.png)
+
+![Slideshow Example 3](/images/slideshow3.png)
+
+![Slideshow Example 4](/images/slideshow4.png)
+
 ### Starting the Game
+![Game Begins with the Small Board](/images/game-begins-small-board.png)
+
 ### Playing the Game
+![Advice Column 1](/images/advice-column1.png)
+
+![Advice Column 2](/images/advice-column2.png)
+
+![Middle Game Before Markers](/images/middle-game-before-markers-small-board)
+
+![Middle Game After Markers](/images/middle-game-after-markers-small-board)
+
 ### End of Game
+![Near End Game Before Markers](/images/near-end-game-before-markers-small-board.png)
+
+![Near End Game After Markers](/images/near-end-game-after-markers-small-board.png)
+
+![End Game Before Markers](/images/end-game-before-markers-small-board.png)
+
+![End Game After Markers](/images/end-game-after-markers-small-board.png)
+
+![End Game Message for the Small Board](/images/end-message-small-board.png)
 
 ## Full Version vs. Partial Version
 The primary differences between what would be deemed the full version and the partial version have to do with the size of the board, which simplifies things immesurably. But it's also the quality of the AI that the user plays against. I can either maximize both things to make the highest quality and most difficult project, or I can minimize them and create an easier project.
