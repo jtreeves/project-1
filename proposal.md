@@ -138,8 +138,17 @@ In the previous step, only the red square, blue cirlce, and yellow and green tri
 ### End of Game
 
 ## Full Version vs. Partial Version
+The primary differences between what would be deemed the full version and the partial version have to do with the size of the board, which simplifies things immesurably. But it's also the quality of the AI that the user plays against. I can either maximize both things to make the highest quality and most difficult project, or I can minimize them and create an easier project.
+
 ### Large Board vs. Small Board
+The small board should be built and conquered first. In a scenario in which I'm not able to finish the game beyond the small board, this approach will allow me to have at least something to show upon presesntation. Ideally, I'll be able to expand it to the full. Especially since the logic shouldn't be too different than with the smaller board. The main difference is the amount of time it would take to play the game. Time I won't have in abundance during the early programming hours, but that I will presumably have more of during the later days.
+
 ### Dumb AI vs. Smart AI
+It's possible for the AI to be painfully dumb. As in, it doesn't know which tiles it currently has, what tiles are currently on the board, or even how to win the game. It only knows how to randomly select one of the tiles it currently has and randomply place it on any of the cells that are currently available. This would likely lead to some dull game play, but it would be comparatively easy to put it together just to be able to confirm that the game can play at its most rudimentary level.
+
+In contrast, a smarter AI could be built to both know what tiles it has, what tiles are on the board, how to win the game, and probability theory to determine how likely it is that the user might get a tile that it might want itself.
+
+To begin, I think it makes sense to build out the dumb AI on the small board. Then, after conquering it, I can build it out to a more advanced level with the large board and a more sophisticated AI.
 
 ## Coding Concepts
 ### HTML
