@@ -186,9 +186,9 @@ INTRO TEXT TK
 
 ![Advice Column 2](/images/advice-column2.png)
 
-![Middle Game Before Markers](/images/middle-game-before-markers-small-board)
+![Middle Game Before Markers](/images/middle-game-before-markers-small-board.png)
 
-![Middle Game After Markers](/images/middle-game-after-markers-small-board)
+![Middle Game After Markers](/images/middle-game-after-markers-small-board.png)
 
 ### End of Game
 ![Near End Game Before Markers](/images/near-end-game-before-markers-small-board.png)
