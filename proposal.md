@@ -152,7 +152,7 @@ With complicated match pairs, a numerical method is need to clarify the score in
 | 19     | 4        | 2 sets of 2 matches       |
 | 20     | 4        | 2 matches across all 4    |
 
-(Note: The points above are only used to determine how to break match conflicts. They have no bearing on who wins the game, unless it ends with a tie, in which the player with the most accumulated points wins.)
+(Note: The points above are only used to determine how to break match conflicts. They have no bearing on who wins the game, unless it ends with a tie, in which case the player with the most accumulated points wins.)
 
 While this layout is unlikely to occur during a game, it's certainly possible. After you see what happens in the next move, you'll understand why it should be avoided:
 ![Possible Second Move for the Small Board](/images/possible-second-move-small-board.png)
@@ -167,9 +167,11 @@ In the previous step, only the red square, blue cirlce, and yellow and green tri
 INTRO TEXT TK
 
 ### Landing Page
+Upon opening the game, the user will see a landing page announcing the game, providing a basic description of it, and options to either start playing the game or watch a slideshow further explaining the game:
 ![Landing Page](/images/landing-page.png)
 
 ### Slideshow
+If the user chooses to view the slideshow, they'll see some slides about the different tiles involved in the game and different scenarios they might run across (i.e., visuals similar to the proposals's wireframes):
 ![Slideshow Example 1](/images/slideshow1.png)
 
 ![Slideshow Example 2](/images/slideshow2.png)
@@ -179,18 +181,26 @@ INTRO TEXT TK
 ![Slideshow Example 4](/images/slideshow4.png)
 
 ### Starting the Game
+Once the user decides to play the game, they will be sent to a game page featuring the board (either large or small) at the top, with the player's initial 4 cards below it, along with a sidebar to the right that will operate like a console, providing feedback throughout the game:
 ![Game Begins with the Small Board](/images/game-begins-small-board.png)
 
 ### Playing the Game
+Once the game begins, the user will see advice like the below in the sidebar, informing them when they try to make an unallowed move and explaining why which player won a particular match. In the earlier iterations of the game build, this console will provide bare minimum support. However, in later iterations, this console should provide more detailed explanations, once its logic is built out.
 ![Advice Column 1](/images/advice-column1.png)
 
 ![Advice Column 2](/images/advice-column2.png)
 
+By the middle of the game, the board may look something like this before matches are resolved:
 ![Middle Game Before Markers](/images/middle-game-before-markers-small-board.png)
 
+And like this after the match has been resolved:
 ![Middle Game After Markers](/images/middle-game-after-markers-small-board.png)
 
 ### End of Game
+As the game progresses, the board will get more crowded, thus providing less open cells for players to attempt to capture. In the below example, neither player can match with the one cell available for a match ()
+![Late Game Desperation](/images/late-game-desparate-small-board.png)
+
+As the game 
 ![Near End Game Before Markers](/images/near-end-game-before-markers-small-board.png)
 
 ![Near End Game After Markers](/images/near-end-game-after-markers-small-board.png)
